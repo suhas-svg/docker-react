@@ -7,3 +7,11 @@ before_install:
 
 script:
   - docker run suhas npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "docker1"
+  env: "Docker1-env"
+  bucket_name: "elasticbeanstalk-us-east-1-590183718915"
+  bucket_path: "docker1"
